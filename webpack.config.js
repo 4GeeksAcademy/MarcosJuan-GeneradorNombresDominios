@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.css$/,
@@ -58,14 +58,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new WebpackErrorReporting({
-      hookURL: process.env.BC_ERROR_HOOK,
-      username: process.env.BC_STUDENT_EMAIL,
-      token: process.env.BC_ASSETS_TOKEN,
-      compiler: "webpack",
-      language: "html,css,javascript",
-      framework: "vanillajs"
-    }),
     new FriendlyErrorsWebpackPlugin({
         // additionalFormatters: [cleanStack]
     }),
